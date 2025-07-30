@@ -1,0 +1,22 @@
+[29-Jul-2025 10:18:48 UTC] PHP Fatal error:  Cannot redeclare blog_preview_enqueue_assets() (previously declared in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-content\themes\blog-preview-theme\functions.php:3) in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-content\themes\blog-preview-theme\functions.php on line 27
+[29-Jul-2025 10:18:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-includes\class-wp-recovery-mode-email-service.php on line 367
+[29-Jul-2025 10:18:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-includes\class-wp-recovery-mode-email-service.php on line 368
+[29-Jul-2025 10:18:52 UTC] PHP Fatal error:  Cannot redeclare blog_preview_enqueue_assets() (previously declared in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-content\themes\blog-preview-theme\functions.php:3) in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-content\themes\blog-preview-theme\functions.php on line 27
+[29-Jul-2025 10:18:52 UTC] PHP Fatal error:  Cannot redeclare blog_preview_enqueue_assets() (previously declared in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-content\themes\blog-preview-theme\functions.php:3) in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-content\themes\blog-preview-theme\functions.php on line 27
+[29-Jul-2025 10:19:48 UTC] PHP Fatal error:  Cannot redeclare blog_preview_enqueue_assets() (previously declared in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-content\themes\blog-preview-theme\functions.php:3) in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-content\themes\blog-preview-theme\functions.php on line 27
+[29-Jul-2025 15:17:35 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-content\themes\blogpreview-theme\functions.php on line 38
+[30-Jul-2025 10:13:42 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "load_more_posts_ajax" not found or invalid function name in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-includes\class-wp-hook.php:324
+Stack trace:
+#0 C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#1 C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-admin\admin-ajax.php(192): do_action('wp_ajax_load_mo...')
+#3 {main}
+  thrown in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-includes\class-wp-hook.php on line 324
+[30-Jul-2025 10:13:43 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "load_more_posts_ajax" not found or invalid function name in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-includes\class-wp-hook.php:324
+Stack trace:
+#0 C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#1 C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-admin\admin-ajax.php(192): do_action('wp_ajax_load_mo...')
+#3 {main}
+  thrown in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-includes\class-wp-hook.php on line 324
+[30-Jul-2025 12:19:24 UTC] PHP Warning:  Attempt to read property "title" on null in C:\Users\G2TECH\Local Sites\appviewx-blog-theme\app\public\wp-includes\class-wp-customize-widgets.php on line 926
