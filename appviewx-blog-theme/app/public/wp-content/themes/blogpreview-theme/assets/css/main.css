@@ -707,3 +707,35 @@ body.dark-mode .dark-mode-toggle .moon-icon {
         padding: 0 10px;
     }
 }
+
+
+/* filter posts styles */
+.product-filter-buttons {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .filter-btn {
+        padding: 8px 15px;
+        margin: 5px;
+        border: none;
+        cursor: pointer;
+        background: #eee;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+        background: #0073aa;
+        color: #fff;
+    }
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .product-card {
+        transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+        transform: translateY(-5px);
+    }

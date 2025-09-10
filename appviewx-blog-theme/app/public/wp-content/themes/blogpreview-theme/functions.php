@@ -50,4 +50,96 @@ function load_more_posts_ajax() {
 
     wp_die();
 }
+
+
+// ==============================
+// Register CPT: Product Filter
+// ==============================
+function blog_preview_register_product_filter_cpt() {
+    $labels = array(
+        'name'               => 'Products',
+        'singular_name'      => 'Product',
+        'menu_name'          => 'Products',
+        'add_new_item'       => 'Add New Product',
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'supports'           => array('title', 'editor', 'thumbnail', 'excerpt'),
+    );
+
+    register_taxonomy(
+        'product_category', // taxonomy slug
+        'product_filter',   // post type
+        array(
+            'label'        => __( 'Product Categories' ),
+            'rewrite'      => array( 'slug' => 'product-category' ),
+            'hierarchical' => true, // behaves like categories ....this shows the option for parent
+        )
+    );
+
+    register_post_type('product_filter', $args);
+}
+add_action('init', 'blog_preview_register_product_filter_cpt');
+
+
+// ==============================
+// Shortcode: Product Filter (with template part)
+// ==============================
+function blog_preview_product_filter_shortcode() {
+    ob_start();
+
+    // Get categories for CPT product_filter
+    $categories = get_terms(array(
+        'taxonomy'   => 'product_category',
+        'hide_empty' => true,
+    ));
+
+
+    // Query CPT posts
+    $products = new WP_Query(array(
+        'post_type'      => 'product_filter',
+        'posts_per_page' => -1,
+        'post_status'    => 'publish',
+    ));
+    ?>
+
+    <div class="product-filter-wrapper">
+        <!-- Filter Buttons -->
+        <div class="product-filter-buttons">
+            <button class="filter-btn active" data-cat="all">All</button>
+            <?php foreach ($categories as $cat) : ?>
+                <button class="filter-btn" data-cat="cat-<?php echo esc_attr($cat->term_id); ?>">
+                    <?php echo esc_html($cat->name); ?>
+                </button>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid">
+            <?php if ($products->have_posts()) : ?>
+                <?php while ($products->have_posts()) : $products->the_post(); ?>
+                    <?php
+                    $terms = wp_get_post_terms(get_the_ID(), 'product_category');
+                    $cat_classes = '';
+                    foreach ($terms as $t) {
+                        $cat_classes .= ' cat-' . $t->term_id;
+                    }
+                    ?>
+                    <div class="product-card<?php echo esc_attr($cat_classes); ?>">
+                        <?php  get_template_part('template-parts/post-card'); ?>
+                    </div>
+                <?php endwhile; wp_reset_postdata(); ?>
+            <?php else : ?>
+                <p>No products found.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('product_filter', 'blog_preview_product_filter_shortcode');
+
 ?>
