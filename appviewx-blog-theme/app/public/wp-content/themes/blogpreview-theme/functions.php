@@ -51,10 +51,8 @@ function load_more_posts_ajax() {
     wp_die();
 }
 
-
-// ==============================
 // Register CPT: Product Filter
-// ==============================
+
 function blog_preview_register_product_filter_cpt() {
     $labels = array(
         'name'               => 'Products',
@@ -84,9 +82,8 @@ function blog_preview_register_product_filter_cpt() {
 add_action('init', 'blog_preview_register_product_filter_cpt');
 
 
-// ==============================
 // Shortcode: Product Filter (with template part)
-// ==============================
+
 function blog_preview_product_filter_shortcode() {
     ob_start();
 
